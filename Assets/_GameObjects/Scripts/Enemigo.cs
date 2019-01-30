@@ -18,8 +18,7 @@ public class Enemigo : MonoBehaviour {
          */
         if (collision.gameObject.CompareTag("Player")) {
             collision.gameObject.GetComponent<Player>().RecibirDanyo(danyo);
-            Instantiate(prefabExplosion, this.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            Morir();
         }
     }
 
@@ -27,7 +26,8 @@ public class Enemigo : MonoBehaviour {
 
     }
     public void Morir() {
-
+        Instantiate(prefabExplosion, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
     public void RecibirDanyo() {
 

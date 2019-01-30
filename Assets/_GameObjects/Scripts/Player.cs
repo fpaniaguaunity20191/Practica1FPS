@@ -8,14 +8,18 @@ public class Player : MonoBehaviour
     [SerializeField] Text txtVida;
     [SerializeField] int salud = 100;
     private const int SALUD_MAXIMA = 100;
-    private GameObject arma;
+    [SerializeField] GameObject arma;
     private bool esInmune;
     private bool estaVivo;
 
     private void Start() {
         txtVida.text = salud.ToString();
     }
-
+    private void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            Disparar();
+        }
+    }
     public bool IncrementarSalud(int incremento) {
         bool atope = true;
         if (salud < SALUD_MAXIMA) {
@@ -26,7 +30,6 @@ public class Player : MonoBehaviour
         }
         return atope;
     }
-
     public void RecibirDanyo(int danyo) {
         salud = salud - danyo;
         salud = Mathf.Max(salud, 0);
@@ -34,5 +37,8 @@ public class Player : MonoBehaviour
     }
     private void Morir() {
 
+    }
+    private void Disparar() {
+        arma.GetComponent<Arma>().Disparar();
     }
 }
