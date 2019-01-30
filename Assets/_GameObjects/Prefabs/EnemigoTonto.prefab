@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8369444052514733348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.3, y: 11.841, z: 56.58}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,6 +109,8 @@ MonoBehaviour:
   danyo: 30
   salud: 100
   distanciaDeteccion: 0
+  prefabExplosion: {fileID: 7748900537009162607, guid: f0d67032c89d20e4cb79bbb02311c07b,
+    type: 3}
   velocidad: 3
 --- !u!54 &8369444052514733338
 Rigidbody:

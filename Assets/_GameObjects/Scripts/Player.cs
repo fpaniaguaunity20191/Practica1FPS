@@ -27,8 +27,10 @@ public class Player : MonoBehaviour
         return atope;
     }
 
-    private void RecibirDanyo() {
-
+    public void RecibirDanyo(int danyo) {
+        salud = salud - danyo;
+        salud = Mathf.Max(salud, 0);
+        txtVida.text = salud.ToString();
     }
     private void Morir() {
 
