@@ -8,6 +8,13 @@ public class Enemigo : MonoBehaviour {
     public float distanciaDeteccion;//A partir de cuando tengo a tiro al player
     public GameObject prefabExplosion; //Prefab de la explosión
 
+    private TextMesh tm;//BORRAR EN EL FUTURO
+
+    public virtual void Start() {
+        tm = GetComponentInChildren<TextMesh>();//QUITAR EN EL FUTURO
+        tm.text = salud.ToString();//QUITAR EN EL FUTURO
+    }
+
     private void OnCollisionEnter(Collision collision) {
         /*
          * 1. Saber si ha colisionado con el player 
@@ -22,17 +29,17 @@ public class Enemigo : MonoBehaviour {
         }
     }
 
-    public void QuitarSalud() {
-
-    }
     public void Morir() {
         Instantiate(prefabExplosion, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
-    public void RecibirDanyo() {
-
+    public void RecibirDanyo(int danyo) {
+        salud = salud - danyo;
+        tm.text = salud.ToString();//QUITAR EN EL FUTURO
+        if (salud <= 0) {
+            Morir();
+        } else {
+            //Sonido del dolor
+        }
     }
-
-
-
 }

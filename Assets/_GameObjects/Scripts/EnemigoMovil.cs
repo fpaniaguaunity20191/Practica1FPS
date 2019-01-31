@@ -11,8 +11,9 @@ public class EnemigoMovil : Enemigo
     private const float ANGULO_MINIMO = -90f;
     private const float ANGULO_MAXIMO = 90f;
 
-    private void Start() {
+    public override void Start() {
         InvokeRepeating("Rotar", TIEMPO_INICIO, TIEMPO_ENTRE_ROTACIONES);
+        base.Start();
     }
 
     public void Update()
