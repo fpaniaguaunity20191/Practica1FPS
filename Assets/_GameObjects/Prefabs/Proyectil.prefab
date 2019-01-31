@@ -153,3 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danyo: 25
+  prefabImpacto: {fileID: 4674772017195747151, guid: 23c827ccf4a4a3d4fb6f77251959a0ad,
+    type: 3}

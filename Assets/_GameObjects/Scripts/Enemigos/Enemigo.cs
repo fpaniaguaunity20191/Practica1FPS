@@ -10,6 +10,10 @@ public class Enemigo : MonoBehaviour {
 
     private TextMesh tm;//BORRAR EN EL FUTURO
 
+    public virtual void CelebrarNavidad() {
+
+    }
+
     public virtual void Start() {
         tm = GetComponentInChildren<TextMesh>();//QUITAR EN EL FUTURO
         tm.text = salud.ToString();//QUITAR EN EL FUTURO
