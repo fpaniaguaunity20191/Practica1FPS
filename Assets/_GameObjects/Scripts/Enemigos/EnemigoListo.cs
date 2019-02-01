@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class EnemigoListo : EnemigoMovil
 {
-    private Transform transformPlayer;
-    private void Start() {
-        transformPlayer = GameObject.Find("Player").transform;
-        base.Start();
-    }
     private void Update() {
         if (EstaADistanciaDeAtaque()) { //A por él
             transform.LookAt(transformPlayer);

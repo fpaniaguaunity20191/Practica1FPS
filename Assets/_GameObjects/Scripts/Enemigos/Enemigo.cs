@@ -7,14 +7,11 @@ public class Enemigo : MonoBehaviour {
     public int salud;//Salud del enemigo
     public float distanciaDeteccion;//A partir de cuando tengo a tiro al player
     public GameObject prefabExplosion; //Prefab de la explosión
-
     private TextMesh tm;//BORRAR EN EL FUTURO
-
-    public virtual void CelebrarNavidad() {
-
-    }
+    protected Transform transformPlayer;
 
     public virtual void Start() {
+        transformPlayer = GameObject.Find("Player").transform;
         tm = GetComponentInChildren<TextMesh>();//QUITAR EN EL FUTURO
         tm.text = salud.ToString();//QUITAR EN EL FUTURO
     }
