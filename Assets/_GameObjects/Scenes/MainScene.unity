@@ -4287,7 +4287,7 @@ MonoBehaviour:
   prefabsEnemigo:
   - {fileID: 8369444052514733348, guid: 2fdb9aa9970738b448aa3b6546be3b0b, type: 3}
   - {fileID: 8369444052514733348, guid: 49c20db75a4f874409cd454afae07ff3, type: 3}
-  timeBetweenSpawn: 5
+  timeBetweenSpawn: 1
 --- !u!4 &1699912367
 Transform:
   m_ObjectHideFlags: 0
