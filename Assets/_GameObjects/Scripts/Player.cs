@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] Arma[] armas;
     private bool esInmune;
     private bool estaVivo;
+    public int armaActiva = 0;
 
     private void Start() {
         txtVida.text = salud.ToString();
@@ -20,16 +21,24 @@ public class Player : MonoBehaviour
             Disparar();
         }
         if (Input.GetKeyDown(KeyCode.R)) {
-            armas[0].Reload();
+            armas[armaActiva].Reload();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            armas[0].enabled = true;
-            armas[1].enabled = false;
+            CambiarArma(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            armas[0].enabled = false;
-            armas[1].enabled = true;
+            CambiarArma(1);
         }
+    }
+    private void CambiarArma(int armaAActivar)
+    {
+        //Desactivamos todas las armas
+        for(int i = 0; i < armas.Length; i++)
+        {
+            armas[i].gameObject.SetActive(false);
+        }
+        armas[armaAActivar].gameObject.SetActive(true);
+        armaActiva = armaAActivar;
     }
     public bool IncrementarSalud(int incremento) {
         bool atope = true;
@@ -50,6 +59,6 @@ public class Player : MonoBehaviour
 
     }
     private void Disparar() {
-        armas[0].ApretarGatillo();
+        armas[armaActiva].ApretarGatillo();
     }
 }
